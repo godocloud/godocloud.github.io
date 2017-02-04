@@ -5,9 +5,9 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Syntax Highlighting Post &#8211; 果动云</title>
-<meta name="description" content="Demo post displaying the various ways of highlighting code in Markdown.">
-<meta name="keywords" content="sample post, code, highlighting">
+<title>Git基本概念介绍 &#8211; 果动云</title>
+<meta name="description" content="Git介绍">
+<meta name="keywords" content="git">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
@@ -17,9 +17,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Syntax Highlighting Post">
-<meta property="og:description" content="Demo post displaying the various ways of highlighting code in Markdown.">
-<meta property="og:url" content="http://localhost:4000/intro/code-highlighting-post/">
+<meta property="og:title" content="Git基本概念介绍">
+<meta property="og:description" content="Git介绍">
+<meta property="og:url" content="http://localhost:4000/guide/Git-Quick-Instruction/">
 <meta property="og:site_name" content="果动云">
 <meta property="og:image" content="http://localhost:4000/images/images/logo.png">
 
@@ -27,7 +27,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/intro/code-highlighting-post/">
+<link rel="canonical" href="http://localhost:4000/guide/Git-Quick-Instruction/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="果动云 Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -155,9 +155,9 @@
 <div class="entry-header">
   <div class="header-title">
     <div class="header-title-wrap">
-      <h1>Syntax Highlighting Post</h1>
+      <h1>Git基本概念介绍</h1>
       
-        <h2><span class="entry-date date published updated"><time datetime="2016-12-01T00:00:00+08:00">December 01, 2016</time></span></h2>
+        <h2><span class="entry-date date published updated"><time datetime="2017-02-03T18:15:10+08:00">February 03, 2017</time></span></h2>
       
 
       
@@ -231,77 +231,73 @@
   <article class="hentry">
     <div class="entry-content">
         
-      <h1 class="post-title entry-title">Syntax Highlighting Post</h1>
-      <p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+      <h1 class="post-title entry-title">Git基本概念介绍</h1>
+      <p>研发团队正很多人正在使用svn作为代码版本管理工具，本教程的目的是指导大家快速学习Git，文章可能有点长，但是看过本后大家的Git基本就算入门了，同时也应该具备了正确的Git观，接下来就是多多练习，完全熟练掌握Git。<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/31695171.jpg" alt="" />
+<!-- more -->
+#相关资源<br />
+<a href="https://git-scm.com/">git官方网站</a><br />
+<a href="https://git-scm.com/book/en/v2">git官方电子书</a><br />
+#源码版本控制系统的发展
+##集中化的版本控制系统
+在这个时期分为两个阶段，首先是单机文件版本管理系统，具体的例子有windows文件版本管理等等，这个阶段时间上是没有联网的，所有操作都在本机进行，如下图所示：<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/71628428.jpg" alt="" />
+第二阶段是可以联网的文件版本管理系统，具体有CVS、SVN、VSS、Proforce等等，如下图所示：<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/30600223.jpg" alt="" />
+这也是我们之前最常用的源码管理解决方案，所有人都想统一的代码管理服务器或者服务器集群提交代码，如果断网则无法提交代码。
+##分布式版本控制系统
+这个时候Git闪亮登场了，Git采用了与以往不同的版本管理体系，采用分布式方案，每个客户端都有整个代码库完整的信息，提交代码不需要联网，只需要本地提交，本地代码可以通过push操作推到远程服务器，参与团队协作。如下图所示：<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/92648746.jpg" alt="" />
+经过几十年的发展，Git成为了目前最为优秀的源码管理方式，那么Git是如何产生的呢？我们来看看Git的历史。
+#Git的历史
+同生活中的许多伟大事件一样,Git诞生于一个极富纷争大举创新的年代。Linux内核开源项目有着为数众多的参与者。绝大多数的Linux内核维护 工作都花在了提交补丁和保存、归档的繁琐事务上(1991-2002年间)。到 2002年,整个项组开始启用分布式版本控制系统BitKeeper来管理和维护代码。
+到2005年的时候,开发BitKeeper的商业公司同Linux内核开源社区的合作关系结束,他们收回了免费使用BitKeeper的权利。这就迫使Linux开源社区(特别是Linux的缔造者Linus Torvalds )不得不吸取教训,只有开发 一套属于自己的版本控制系统才不至于重蹈覆辙。他们对新的系统订了若干目标:</p>
 
-<h3 id="rouge-code-blocks">Rouge Code Blocks</h3>
+<ul>
+  <li>速度</li>
+  <li>简单的设计</li>
+  <li>对非线性开发模式的强力支持(允许上千个并行开发的分支)</li>
+  <li>完全分布式</li>
+  <li>有能高效管理类似Linux内核一样的超大规模项目(速度和数据量)</li>
+</ul>
 
-<p>To modify styling and highlight colors edit <code class="highlighter-rouge">/_sass/_rouge.scss</code>.</p>
-
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#container</span> <span class="p">{</span>
-    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-    {% if page.previous %}
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
-    {% endif %}
-    {% if page.next %}
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
-    {% endif %}
-<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">class</span> <span class="nc">TagIndex</span> <span class="o">&lt;</span> <span class="no">Page</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
-      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
-      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
-      <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
-      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">'index.html'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">'_layouts'</span><span class="p">),</span> <span class="s1">'tag_index.html'</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag</span>
-      <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_prefix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'Tagged: '</span>
-      <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_suffix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'&amp;#8211;'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">"</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"An archive of posts tagged </span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">."</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
-
-<h3 id="standard-code-block">Standard Code Block</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;nav class="pagination" role="navigation"&gt;
-    {% if page.previous %}
-        &lt;a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}"&gt;Previous article&lt;/a&gt;
-    {% endif %}
-    {% if page.next %}
-        &lt;a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}"&gt;Next article&lt;/a&gt;
-    {% endif %}
-&lt;/nav&gt;&lt;!-- /.pagination --&gt;
-</code></pre>
-</div>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a>&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<p>所以说是时代造就了Git。
+#Git基础要点
+##直接快照, 而非比较差异
+我们来看下面的图，版本1创建了A、B、C三个文件，版本2修改了A、C两个文件，版本3修改了C文件，版本4修改了文件A、B，版本5修改了文件B、C
+<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/3940148.jpg" alt="" />
+实际上每个版本只储存了变化量，我们继续看下面的图：
+<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/22264511.jpg" alt="" />
+虽然每个版本都存储了全部的文件信息，但实际上，如果此版本有些文件没有改动，则只对这些文件做快照，相当于用指针指向这些文件，而不是真正的在磁盘上存储这些文件。理解起来应该不困难，我们就不在赘述了。
+##近乎所有操作都可以本地执行
+在 Git 中的绝大多数操作都只需要访问本地文件和资源,不用连网。但如果用SVN的话,差不多所有操作都需要连接网络。因为Git在本地磁盘上就保存着所有有关当前项目的历史更新,所以处理起来速度飞快。 
+##时刻保证数据完整性
+在保存到Git之前,所有数据都要进行内容的校验和(checksum)计算,并将此结果作为数据的唯一标识和索引。换句话说，不可能在你修改了文件或目录之后,Git一无所知。这项特性作为Git的设计哲学，建在整体架构的最底层。所以如果文件在传输时变得不完整,或者磁盘损坏导致文件数据缺失,Git都能立即察觉。 
+##多数操作仅添加数据
+常用的Git操作大多仅仅是把数据添加到数据库。因为任何一种不可逆的操作,比如删除数据,要回退或重现都会非常困难。在别的VCS中,若还未提交更新,就有可能丢失或者混淆一些修改的内容,但在Git里,一旦提交快照之后就完全不用担心丢失数据,特别是在养成了定期推送至其他镜像仓库的习惯的话。
+##Git的三种状态
+好,现在请注意,接下来要讲的概念非常重要。对于任何一个文件,在 Git 内都只有三种状态:已提交(committed),已修改(modified)和已暂存(staged)。已提交表示该 文件已经被安全地保存在本地数据库中了;已修改表示修改了某个文件,但还没有提交保存;已暂存表示把已修改的文件放在下次提交时要保存的清单中。
+由此我们看到 Git 管理项目时,文件流转的三个工作区域:Git的本地数据目录,工作目录以及暂存区域。
+<img src="http://7xkda0.com1.z0.glb.clouddn.com/16-2-29/72087894.jpg" alt="" />
+每个项目都有一个git目录,它是Git用来保存元数据和对象数据库的地方。该目录非常重要,每次克隆镜像仓库的时候,实际拷贝的就是这个目录里面的数据。
+从项目中取出某个版本的所有文件和目录,用以开始后续工作的叫做工作目录。这些文件实际上都是从git目录中的压缩对象数据库中提取出来的,接下来就可以在工作目录中对这些文件进行编辑。
+所谓的暂存区域只不过是个简单的文件,一般都放在git目录中。有时候人们会把这个文件叫做索引文件,不过标准说法还是叫暂存区域。</p>
+<ul>
+  <li>基本的 Git 工作流程如下所示:
+    <ol>
+      <li>在工作目录中修改某些文件。</li>
+      <li>对这些修改了的文件作快照,并保存到暂存区域。</li>
+      <li>提交更新,将保存在暂存区域的文件快照转储到 git 目录中。
+所以,我们可以从文件所处的位置来判断状态:如果是git目录中保存着的特定版本文件,就属于已提交状态;如果作了修改并已放入暂存区域,就属于已暂存状态;如果自上次取出后,作了修改但还没有放到暂存区域,就是已修改状态。</li>
+    </ol>
+  </li>
+</ul>
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="http://localhost:4000/tags#sample post" title="Pages tagged sample post" class="tag"><span class="term">sample post</span></a><a href="http://localhost:4000/tags#code" title="Pages tagged code" class="tag"><span class="term">code</span></a><a href="http://localhost:4000/tags#highlighting" title="Pages tagged highlighting" class="tag"><span class="term">highlighting</span></a></span>
-        <span>Updated on <span class="entry-date date updated"><time datetime="2016-12-01">December 01, 2016</time></span></span>
+        <span class="entry-tags"><a href="http://localhost:4000/tags#git" title="Pages tagged git" class="tag"><span class="term">git</span></a></span>
         
         <span class="author vcard"><span class="fn">Your name</span></span>
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/intro/code-highlighting-post/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/intro/code-highlighting-post/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/intro/code-highlighting-post/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/guide/Git-Quick-Instruction/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=http://localhost:4000/guide/Git-Quick-Instruction/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=http://localhost:4000/guide/Git-Quick-Instruction/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
 
@@ -338,18 +334,18 @@
     <div class="read-more">
   
     <div class="read-more-header">
-      <a href="http://localhost:4000/dark-post/" class="read-more-btn">Read More</a>
+      <a href="http://localhost:4000/intro/sample-post/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="http://localhost:4000/guide/Git-Quick-Instruction/" title="Git基本概念介绍">Git基本概念介绍</a></h3>
-      <p>Git介绍 <a href="http://localhost:4000/guide/Git-Quick-Instruction/">Continue reading</a></p>
+      <h3><a href="http://localhost:4000/intro/sample-post/" title="Sample Post">Sample Post</a></h3>
+      <p>Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more. <a href="http://localhost:4000/intro/sample-post/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="http://localhost:4000/intro/sample-post/" title="Sample Post">Sample Post</a></h4>
-        <span>Published on December 02, 2016</span>
+        <h4><a href="http://localhost:4000/intro/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></h4>
+        <span>Published on December 01, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">

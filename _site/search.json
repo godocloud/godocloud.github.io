@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Git基本概念介绍",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "http://localhost:4000/guide/Git-Quick-Instruction/",
+      "date"     : "2017-02-03 18:15:10 +0800"
+    } ,
+  
+    {
       "title"    : "Sample Post",
       "category" : "",
       "tags"     : "sample post",
