@@ -6,7 +6,10 @@ title: 基于官方例程的快速上手笔记
 description: 笔记也是备忘:)
 tags: [ROS]
 categories: [guide]
-
+image:
+    feature: rosNamespaces2.png
+    credit: ROS
+    creditlink: 
 ---
 # ROS学习笔记
 
