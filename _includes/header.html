@@ -59,7 +59,7 @@
       {% if site.reading_time and page.layout == 'post' %}
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
-          {% assign readtime = content | number_of_words | divided_by:site.words_per_minute %}
+          {% assign readtime = content | number_of_words divided_by:site.words_per_minute %}
           Reading time ~{{ readtime }} minutes
         </p><!-- /.entry-reading-time -->
       {% else %}
