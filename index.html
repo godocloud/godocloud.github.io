@@ -22,7 +22,7 @@ comments: false
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
         {% assign readtime = post.content | number_of_words divided_by:site.words_per_minute %}
-        Reading time ~{{ readtime }} minutes
+        Reading time ~{{ post.content | number_of_words }} minutes
       </span><!-- /.entry-reading-time -->
       {% endif %}
     </div><!-- /.entry-meta -->

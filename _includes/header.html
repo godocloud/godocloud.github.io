@@ -60,7 +60,7 @@
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
           {% assign readtime = content | number_of_words divided_by:site.words_per_minute %}
-          Reading time ~{{ readtime }} minutes
+          Reading time ~{{ post.content | number_of_words }} minutes
         </p><!-- /.entry-reading-time -->
       {% else %}
           <p class="entry-reading-time">
